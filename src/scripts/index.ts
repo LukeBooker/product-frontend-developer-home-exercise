@@ -1,13 +1,17 @@
 import '../styles/main.scss';
+import { MemberCard } from '../components/cards/memberCard/memberCard';
 
 /** Our main application class, extend this as needed. */
 class Main {
-  private readonly verificationLog: string = "Hello world!";
+  private memberCard: MemberCard;
 
   constructor() {
-    // Verify the application is running as intended by viewing this log in your
-    // browser's development console. Feel free to delete this log once confirmed.
-    console.log(this.verificationLog);
+    this.memberCard = new MemberCard('main');
+    this.init();
+  }
+
+  private init(): void {
+      this.memberCard.render();
   }
 }
 

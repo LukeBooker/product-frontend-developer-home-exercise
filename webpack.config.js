@@ -20,6 +20,10 @@ module.exports = {
           'sass-loader'                 // Compiles Sass to CSS
         ],
       },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
     ],
   },
   plugins: [
