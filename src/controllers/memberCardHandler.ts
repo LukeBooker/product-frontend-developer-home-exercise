@@ -19,6 +19,7 @@ export class MemberCardHandler {
       const member = {
         name: data.value.nameDisplayAs,
         img: data.value.thumbnailUrl,
+        memberParty: data.value.latestParty.name,
         partyColour: data.value.latestParty.backgroundColour,
         constituancy: data.value.latestHouseMembership.membershipFrom,
         membershipEndDate: data.value.latestHouseMembership.membershipEndDate,

@@ -3,6 +3,7 @@ import { DateHelper } from "../../../utils/dateHelper";
 export type Member = {
   name: string;
   img: string;
+  memberParty: string;
   partyColour: string;
   constituancy: string;
   membershipEndDate: string;
@@ -22,14 +23,14 @@ export class MemberCard {
   }
 
   render(member: Member): void {
-    const { name, img, partyColour, constituancy, membershipEndDate } = member;
+    const { name, img, memberParty, partyColour, constituancy, membershipEndDate } = member;
     const isMembershipExpired: boolean = DateHelper.isEarlier(membershipEndDate);
 
     this.container.innerHTML = `
             <article class="member-card">
                 <img src="${img}" alt="" class="member-card__image" style="border-color:#${partyColour};"/>
                 <div class="member-card__details-wrapper">
-                    <p class="member-card__info">Member Party</p>
+                    <p class="member-card__info">${memberParty}</p>
                     <h2 class="member-card__title">${name}</h2>
                     <p class="member-card__subtitle">${constituancy}</p>
                     <p class="member-card__tagline${isMembershipExpired ? '' : ' disabled'}">No longer serving</p>
