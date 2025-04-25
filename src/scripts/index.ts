@@ -1,17 +1,18 @@
 import '../styles/main.scss';
 import { MemberCard } from '../components/cards/memberCard/memberCard';
+import { MemberCardHandler } from '../controllers/memberCardHandler';
 
-/** Our main application class, extend this as needed. */
 class Main {
-  private memberCard: MemberCard;
+  private memberCardHandler: MemberCardHandler;
 
   constructor() {
-    this.memberCard = new MemberCard('main');
+    const card = new MemberCard('main');
+    this.memberCardHandler = new MemberCardHandler(card);
     this.init();
   }
 
   private init(): void {
-      this.memberCard.render();
+    this.memberCardHandler.init();
   }
 }
 

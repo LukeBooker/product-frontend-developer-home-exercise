@@ -15,9 +15,9 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,  // Extract CSS into files
-          'css-loader',                 // Turns CSS into CommonJS
-          'sass-loader'                 // Compiles Sass to CSS
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
         ],
       },
       {
