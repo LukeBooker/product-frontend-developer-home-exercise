@@ -1,12 +1,12 @@
 import { DateHelper } from "../../../utils/dateHelper";
 
-export type Member = {
+export type MemberProps = {
   name: string;
   img: string;
   memberParty: string;
   partyColour: string;
   constituancy: string;
-  membershipEndDate: string;
+  membershipEndDate: string | null;
 };
 
 export class MemberCard {
@@ -22,7 +22,7 @@ export class MemberCard {
     this.container = element;
   }
 
-  render(member: Member): void {
+  render(member: MemberProps): void {
     const { name, img, memberParty, partyColour, constituancy, membershipEndDate } = member;
     const isMembershipExpired: boolean = DateHelper.isEarlier(membershipEndDate);
 

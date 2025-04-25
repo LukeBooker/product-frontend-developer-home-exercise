@@ -1,4 +1,4 @@
-import { MemberCard } from '../components/cards/memberCard/memberCard';
+import { MemberProps, MemberCard } from '../components/cards/memberCard/memberCard';
 import { UrlHelper } from '../utils/urlHelper';
 import { MemberService } from '../services/memberService';
 
@@ -16,7 +16,7 @@ export class MemberCardHandler {
 
     try {
       const data = await MemberService.fetchMemberData(memberId);
-      const member = {
+      const member: MemberProps = {
         name: data.value.nameDisplayAs,
         img: data.value.thumbnailUrl,
         memberParty: data.value.latestParty.name,

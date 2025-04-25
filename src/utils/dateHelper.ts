@@ -1,5 +1,5 @@
 export class DateHelper {
-  static isEarlier(date: string): boolean {
+  static isEarlier(date: string | null): boolean {
     const now = new Date();
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
